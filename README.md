@@ -13,7 +13,7 @@ The LDA-related function applies the lda()-function from the MASS package (Venab
 Each function provides a basic description as well as a detail explanation of input variables and output at the top of the respective code.
 The basic descriptions are also listed below:
 
-## Contents of mach_learn_eval:
+## Contents of mach_learn_eval
 
 ### randomForest.cla.eval() & randomForest.reg.eval()
 These functions apply a random Forest model for classification (...cla.eval) and regression (...reg.eval) respectively and evaluate the contribution of each individual predictor as well as their combination.
@@ -41,7 +41,12 @@ Predictors are added according to their contribution measured as minimized error
 ### prep.input()
 This function is called by the *eval-functions. It takes the formula and data input handed to the parent function, applies some checks and prepares them in the format expected by the parent function: a list with the target variable as vector and all predictors in a named data.frame.
 
-## References:
+## Example
+The example.R-script holds a ready-to-go application of the functions in mach_learn_eval.R.
+An example dataset on heart-disease is used, provided by the Center for Machine Learning and Intelligent Systems (http://archive.ics.uci.edu/ml/machine-learning-databases/heart-disease/processed.cleveland.data).
+The data are prepared after: https://github.com/StatQuest/random_forest_demo/blob/master/random_forest_demo.R
+
+## References
 
 Liaw, A. and Wiener, M.: Classification and Regression by randomForest, R News, 2/3, 18–22, 2002.
 
