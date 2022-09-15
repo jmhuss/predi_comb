@@ -1,5 +1,5 @@
 # predi_comb
-Machine learning predictor-combination evaluation
+#### Machine learning predictor-combination evaluation
 
 When predicting a variable with machine learning algorithms, it might be of interest to learn, which combination of predictors performs best and how much the problem benefits from additional predictors.
 One might also want to choose between different criteria to define ‘best performance’.
