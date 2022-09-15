@@ -42,7 +42,7 @@ Predictors are added according to their contribution measured as minimized error
 This function is called by the `*eval` functions. It takes the formula and data input handed to the parent function, applies some checks and prepares them in the format expected by the parent function: a list with the target variable as vector and all predictors in a named data.frame.
 
 ## Example
-The [example.R](https://github.com/jmhuss/predi_comb/blob/main/example.R)-script holds a ready-to-go application of the functions in [mach_learn_eval.R](https://github.com/jmhuss/predi_comb/blob/main/mach_learn_eval.R).
+The [example.R](/example.R)-script holds a ready-to-go application of the functions in [mach_learn_eval.R](/mach_learn_eval.R).
 An [example dataset on heart-disease](http://archive.ics.uci.edu/ml/machine-learning-databases/heart-disease/processed.cleveland.data) is used, provided by the Center for Machine Learning and Intelligent Systems.
 The dataset are prepared after [a demo script by StatQuest](https://github.com/StatQuest/random_forest_demo/blob/master/random_forest_demo.R).
 
