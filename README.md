@@ -7,8 +7,8 @@ One might also want to choose between different criteria to define ‘best perfo
 This repository holds a number of R functions to evaluate the best combination of predictors for Linear Discriminant Analysis (LDA) and Random Forest.
 Since the latter has a random component, additional functions repeat the process n times, summarize the  occurring ‘best performances’ and average the respective results.
 
-The Random Forest-related functions apply the randomForest package (Liaw and Wiener, 2002), which is an R interface to the Fortran programs by Breiman and Cutler (available at https://www.stat.berkeley.edu/users/breiman/RandomForests/).
-The LDA-related function applies the lda()-function from the MASS package (Venables and Ripley, 2002).
+The Random Forest-related functions apply the randomForest package (Liaw and Wiener, 2002), which is an R interface to the [Fortran programs by Breiman and Cutler](https://www.stat.berkeley.edu/users/breiman/RandomForests/).
+The LDA-related function applies the `lda()`-function from the MASS package (Venables and Ripley, 2002).
 
 Each function provides a basic description as well as a detail explanation of input variables and output at the top of the respective code.
 The basic descriptions are also listed below:
@@ -16,9 +16,9 @@ The basic descriptions are also listed below:
 ## Contents of mach_learn_eval
 
 ### randomForest.cla.eval() & randomForest.reg.eval()
-These functions apply a random Forest model for classification (...cla.eval) and regression (...reg.eval) respectively and evaluate the contribution of each individual predictor as well as their combination.
-Predictors are added according to their contribution measured as minimized error (specified by 'criterion').
-The optimal 'mtry' (number of random predictors selected for each decision node) is derived and applied for each combination, also by minimizing the specified error.
+These functions apply a random Forest model for classification (`...cla.eval`) and regression (`...reg.eval`) respectively and evaluate the contribution of each individual predictor as well as their combination.
+Predictors are added according to their contribution measured as minimized error (specified by `criterion`).
+The optimal `mtry` (number of random predictors selected for each decision node) is derived and applied for each combination, also by minimizing the specified error.
 
 Options as optimization criterion for classifications are:
 - 'OBB' (Out-of-Bag error, representing the overall error),
@@ -31,20 +31,20 @@ Options for regression are:
 - 'rsq' (pseudo R-squared: 1 - mse / Var(y))
 
 ### randomForest.cla.avg() & randomForest.reg.avg()
-These functions run the respective randomForest.*.eval() function n times with random (if not preset) seeds.
+These functions run the respective `randomForest.*.eval()` function n times with random (if not preset) seeds.
 They compare the optimization path of predictors (order of their contribution) between the runs and average all error rates for runs with the same path.
 
 ### lda.eval()
 This function applies a Linear discriminant analysis (LDA) and evaluates the contribution of each individual predictor as well as their combination.
-Predictors are added according to their contribution measured as minimized error (specified by 'criterion').
+Predictors are added according to their contribution measured as minimized error (specified by `criterion`).
 
 ### prep.input()
-This function is called by the *eval-functions. It takes the formula and data input handed to the parent function, applies some checks and prepares them in the format expected by the parent function: a list with the target variable as vector and all predictors in a named data.frame.
+This function is called by the `*eval` functions. It takes the formula and data input handed to the parent function, applies some checks and prepares them in the format expected by the parent function: a list with the target variable as vector and all predictors in a named data.frame.
 
 ## Example
-The example.R-script holds a ready-to-go application of the functions in mach_learn_eval.R.
-An example dataset on heart-disease is used, provided by the Center for Machine Learning and Intelligent Systems (http://archive.ics.uci.edu/ml/machine-learning-databases/heart-disease/processed.cleveland.data).
-The data are prepared after: https://github.com/StatQuest/random_forest_demo/blob/master/random_forest_demo.R
+The [example.R](https://github.com/jmhuss/predi_comb/blob/main/example.R)-script holds a ready-to-go application of the functions in [mach_learn_eval.R](https://github.com/jmhuss/predi_comb/blob/main/mach_learn_eval.R).
+An [example dataset on heart-disease](http://archive.ics.uci.edu/ml/machine-learning-databases/heart-disease/processed.cleveland.data) is used, provided by the Center for Machine Learning and Intelligent Systems.
+The data are prepared after [a demo script by StatQuest](https://github.com/StatQuest/random_forest_demo/blob/master/random_forest_demo.R).
 
 ## References
 
