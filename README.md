@@ -15,7 +15,7 @@ The basic descriptions are also listed below:
 
 ## Contents of mach_learn_eval
 
-### randomForest.cla.eval() & randomForest.reg.eval()
+#### randomForest.cla.eval() & randomForest.reg.eval()
 These functions apply a random Forest model for classification (`...cla.eval`) and regression (`...reg.eval`) respectively and evaluate the contribution of each individual predictor as well as their combination.
 Predictors are added according to their contribution measured as minimized error (specified by `criterion`).
 The optimal `mtry` (number of random predictors selected for each decision node) is derived and applied for each combination, also by minimizing the specified error.
@@ -30,15 +30,15 @@ Options for regression are:
 - 'rmse' (root mean squared error),
 - 'rsq' (pseudo R-squared: 1 - mse / Var(y))
 
-### randomForest.cla.avg() & randomForest.reg.avg()
+#### randomForest.cla.avg() & randomForest.reg.avg()
 These functions run the respective `randomForest.*.eval()` function n times with random (if not preset) seeds.
 They compare the optimization path of predictors (order of their contribution) between the runs and average all error rates for runs with the same path.
 
-### lda.eval()
+#### lda.eval()
 This function applies a Linear discriminant analysis (LDA) and evaluates the contribution of each individual predictor as well as their combination.
 Predictors are added according to their contribution measured as minimized error (specified by `criterion`).
 
-### prep.input()
+#### prep.input()
 This function is called by the `*eval` functions. It takes the formula and data input handed to the parent function, applies some checks and prepares them in the format expected by the parent function: a list with the target variable as vector and all predictors in a named data.frame.
 
 ## Example
