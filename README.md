@@ -10,7 +10,7 @@ Since the latter has a random component, additional functions repeat the process
 The Random Forest-related functions apply the randomForest package (Liaw and Wiener, 2002), which is an R interface to the [Fortran programs by Breiman and Cutler](https://www.stat.berkeley.edu/users/breiman/RandomForests/).
 The LDA-related function applies the `lda()`-function from the MASS package (Venables and Ripley, 2002).
 
-Each function provides a basic description as well as a detail explanation of input variables and output at the top of the respective code.
+Each function provides a basic description as well as a detailed explanation of input variables and output at the top of the respective code.
 The basic descriptions are also listed below:
 
 ## Contents of mach_learn_eval
